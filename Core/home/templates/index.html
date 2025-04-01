@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django server</title>
+</head>
+<body>
+    <h1> This HTML page is returned by django</h1>
+    <b>This page is nice</b>
+
+    <h2>Your Lucky number is --> {{lucky_number}}</h2>
+    
+    <ul>
+        {% for vegetable in vegetables%}
+        <li>
+            {{vegetable}}
+        </li>
+        {% endfor %}
+    </ul>
+    <hr>
+
+
+<p>
+    <a href="{%url 'about' %}">About</a> |
+    <a href= "{% url 'contact' %}">Contact</a>
+</p>
+</body>
+</html
