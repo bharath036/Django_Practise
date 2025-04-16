@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.template.defaultfilters import slugify 
 #Create your models here.
 class College(models.Model):
     college_name = models.CharField(max_length=100)
@@ -27,6 +27,18 @@ class Student(models.Model):
 
     created_at = models.DateTimeField(auto_now=True)
     update_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name 
+
+class Product(models.Model):
+    product_name = models.CharField(max_length=100)
+    slug = models.SlugField(blank=True)
+
+    def save(self,*args,**kwargs) -> None:
+        self.slug = slugify(f"{self.product_name}")
+        super(Product,self).save(*args,**kwargs)
+
 
 '''
 
