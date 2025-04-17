@@ -9,10 +9,18 @@
     <h1>This is contact page</h1>
     <P>Dynamic URL --> {{id}}</P>
     <P>URL</P>
-    <p>ll</p>
-    <p>
-        <a href="/about">About</a> |
-        <a href="/">Home</a>
-    </p>
+
+    <div class="col-6 mx-auto">
+    <form method="POST">
+
+    {% csrf_token %}
+    
+    {{form}}
+    
+    <button type="'submit">Submit</button>
+
+    </form>
+</div>
+
 </body>
 </html>

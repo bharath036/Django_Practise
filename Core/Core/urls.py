@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from home.views import index,about,contact,dynamic_url
+from home.views import index,about,contact,dynamic_url,request_product
 
 urlpatterns = [
     #when ever a person hits empty url we will pass like this
@@ -26,6 +26,7 @@ urlpatterns = [
     #name = "" --> this in html code and 'about-us' --> used this url to open
     #about is function name
     path('about-us/',about,name='about'),
+     path('request-product/',request_product,name='request_product'),
     path('contact/',contact,name='contact'),
     path('admin/', admin.site.urls),
 ]
